@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report a Flood</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #E0F7FA;">
+
+  <!-- Header -->
+  <div style="background-color: #00796B; padding: 20px; color: white; text-align: center;">
+    <h1 style="margin: 0;">📍 Report a Flooded Area</h1>
+    <p style="margin: 5px 0;">Your report can help alert others and authorities</p>
+  </div>
+
+  <!-- Report Form -->
+  <div style="max-width: 500px; margin: 30px auto; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+    <form action="/submit-report" method="POST" enctype="multipart/form-data">
+      
+      <!-- Location -->
+      <label for="location" style="font-size: 14px;">📌 Location:</label><br>
+      <input type="text" id="location" name="location" placeholder="Enter location or landmark" required
+        style="width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc;" />
+
+      <!-- Description -->
+      <label for="description" style="font-size: 14px;">📝 Description:</label><br>
+      <textarea id="description" name="description" placeholder="Describe the flood situation..." required
+        style="width: 100%; height: 100px; padding: 10px; margin-top: 8px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+
+      <!-- Upload Photo -->
+      <label for="photo" style="font-size: 14px;">📷 Upload Photo (optional):</label><br>
+      <input type="file" id="photo" name="photo"
+        style="margin-top: 8px; margin-bottom: 20px;" /><br>
+
+      <!-- Name (optional) -->
+      <label for="name" style="font-size: 14px;">👤 Your Name (optional):</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter your name"
+        style="width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc;" />
+
+      <!-- Phone (optional) -->
+      <label for="phone" style="font-size: 14px;">📱 Phone Number (optional):</label><br>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+        style="width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 30px; border-radius: 5px; border: 1px solid #ccc;" />
+
+      <!-- Submit Button -->
+      <input type="submit" value="🚨 Submit Report"
+        style="width: 100%; padding: 12px; background-color: #00796B; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;" />
+
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: #004D40; color: white; text-align: center; padding: 10px;">
+    <p style="margin: 5px;">🌐 Thank you for helping make your area safer.</p>
+  </div>
+
+</body>
+</html>
