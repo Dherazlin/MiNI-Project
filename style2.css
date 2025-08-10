@@ -1,0 +1,108 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding:0;
+   box-sizing: border-box;
+   font-family:'poppins', sans-serif;
+}
+
+
+body{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+    background: url('images/image.jpg') no-repeat center center;
+    background-size: cover;
+}
+.wrapper{
+   width: 420px;
+  background: rgba(195, 210, 226, 0.5);
+   color: #000000;
+   border-radius: 20px;
+  padding: 30px 40px;
+  border: 1px;
+
+}
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+.wrapper .input-box{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+    
+}
+.input-box input{
+    width: 100% ;
+    height:90%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255,.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #000000;
+    padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder{
+    color: #070505;
+
+}
+.input-box i{
+    position: absolute;
+    right: 20px;
+   font-size:20px;
+   top: 50%;
+    transform: translateY(-50%);
+}
+.wrapper .remember-me{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15;
+    margin: -15 0 15;
+
+}
+.remember-me label type {
+   margin-right: 3px;
+}
+.remember-me a{
+    color: #010101;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.remember-me a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn{
+    width: 100% ;
+    height: 45px;
+    border: none;
+    background-color: #000000;
+    outline: none;
+    border-radius: 45px; 
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff8f8;
+
+    font-weight: 600;
+}
+
+.wrapper .register{
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+.register p a{
+   color: #000000;
+   font-weight: 600;
+    text-decoration: none;
+}
+.register a:hover{
+    text-decoration: underline;
+}
