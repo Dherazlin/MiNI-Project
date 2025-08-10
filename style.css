@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #E0F7FA;
+}
+
+/* Vertical Panel */
+.vertical-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: #004D40;
+  overflow: hidden;
+} 
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 20px;
+
+}
+/* Header */
+.header {
+  background-color: #00796B;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header p {
+  margin: 5px 0;
+}
+
+/* Buttons */
+.button-container {
+  text-align: center;
+  margin: 30px;
+}
+
+.button-container a {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-report {
+  background-color: #004D40;
+  margin-right: 10px;
+}
+
+.btn-login {
+  background-color: #00796B;
+}
+
+/* Status Cards */
+.status-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 20px;
+}
+
+.card {
+  flex: 1;
+  min-width: 150px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin: 0;
+  color: #00796B;
+}
+
+.card p {
+  margin: 5px;
+}
+
+/* Map Section */
+.map-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+#map {
+  height: 1000px;
+  width: 1300px;
+  border-radius: 20px;
+  border: 1px solid #000000;
+}
+
+/* Footer */
+.footer {
+  background-color: #004D40;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+
+}
+
+.footer p {
+  margin: 5px;
+}
