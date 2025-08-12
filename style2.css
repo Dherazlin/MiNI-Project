@@ -1,18 +1,23 @@
+
+
 body {
     font-family: Arial, sans-serif;
-    background-image: url(images/black.jpg);
-    background-size: cover;      /* Ensures image covers full screen */
-    background-position: center; /* Keeps it centered */
-    background-repeat: no-repeat; /* Prevents tiling */
+    background-image: url("images/bleh.jpg");
+background-color: black;
+    background-size: cover;      
+    background-position: center;
+    background-repeat: no-repeat; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     margin: 0;
+    
 }
 
 .register-container {
-    background: rgba(160, 173, 186, 0.2);
+    background: rgba(17, 17, 17, 0.464);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(86, 82, 82, 0.2);
@@ -28,6 +33,7 @@ h2 {
 
 .input-group {
     margin-bottom: 15px;
+    background: transparent;
 }
 
 label {
@@ -35,6 +41,7 @@ label {
     margin-bottom: 6px;
     font-weight: bold;
     color: #fff;
+    
 }
 
 input {
@@ -43,6 +50,7 @@ input {
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 14px;
+    background:transparent
 }
 .btn {
     width: 100%;
@@ -50,10 +58,13 @@ input {
     background: #000000;
     border: none;
     color: rgb(255, 255, 255);
-    border-radius: 8px;
+    border-radius: 45px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+}
+.btn:hover {
+  background-color: #1b5d39;
 }
 
 .login-link {
@@ -68,4 +79,5 @@ input {
 }
 .login-link a:hover{
     text-decoration: underline;
+    color: #1b5d39
 }
