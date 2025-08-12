@@ -12,7 +12,11 @@
 body{
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: center;    
+    background-position: center;
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
    min-height: 100vh;
     background: url('images/image.jpg') no-repeat center center;
     background-size: cover;
@@ -20,7 +24,7 @@ body{
 .wrapper{
    width: 420px;
   background: rgba(195, 210, 226, 0.5);
-   color: #000000;
+   color:  #000000;
    border-radius: 20px;
   padding: 30px 40px;
   border: 1px;
@@ -83,7 +87,7 @@ body{
     width: 100% ;
     height: 45px;
     border: none;
-    background-color: #000000;
+    background-color:  #1C352D;
     outline: none;
     border-radius: 45px; 
     cursor: pointer;
@@ -91,6 +95,9 @@ body{
     color: #fff8f8;
 
     font-weight: 600;
+}
+.btn:hover {
+  background-color: #1b5d39;
 }
 
 .wrapper .register{
