@@ -19,17 +19,26 @@
 </head>
 <body>
 
-  <!-- Left Vertical Panel -->
-  <div class="vertical-panel"> 
-     <button id="toggleSidebar" class="menu-btn">☰</button>
-  </div>
+  <!-- Sidebar Menu -->
+<div id="sidebar" class="sidebar">
+  <ul>
+    <li><a href="#">📊 Dashboard</a></li>
+    <li><a href="#">📄 All Reports</a></li>
+    <li><a href="#">📈 Analytics</a></li>
+    <li><a href="#">⚙ Settings</a></li>
+    <li class="admin-only"><a href="#">🛠 Admin Control</a></li>
+  </ul>
+</div>
 
 
   <!-- Header -->
-  <header class="header">
+<header class="header">
+  <button id="toggleSidebar" class="menu-btn">☰</button>
+  <div class="header-text">
     <h1>🌧️ Flood Alert & Drainage System</h1>
     <p>Stay informed. Stay safe during monsoons.</p>
-  </header>
+  </div>
+</header>
 
   <!-- Buttons -->
   <div class="button-container">
@@ -81,6 +90,25 @@
         .bindPopup('Mumbai - Example flood marker.')
         .openPopup();
   </script>
+
+  <script>
+  const toggleBtn = document.getElementById('toggleSidebar');
+  const sidebar = document.getElementById('sidebar');
+
+  // Example role check
+  const userRole = "admin"; // Change to "user" or "admin"
+
+  // Show admin menu if role is admin
+  if (userRole === "admin") {
+    document.querySelector('.admin-only').style.display = "block";
+  }
+
+  // Toggle sidebar
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+</script>
+
 
 </body>
 </html>
