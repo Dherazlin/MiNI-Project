@@ -1,95 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap)');
 
 * {
-    margin: 0;
-    padding:0;
-   box-sizing: border-box;
-   font-family:'poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-
-
 body {
-  margin: 0;
-  background-color: #A6B28B;
+  background-color: #DAE2EB;
+  overflow-x: hidden; /* Prevent horizontal scroll during animation */
+}
+
+/* --- YouTube Sidebar Style --- */
+
+#layout-container {
+  display: flex;
+}
+
+/* This is now the EXPANDED state */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* Expanded width */
+  height: 100%;
+  background-color: #1C352D;
+  color: white;
+  z-index: 1000;
+  transition: width 0.3s ease;
+  overflow-x: hidden; /* Hide content when shrinking */
+}
+d0dce3
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  height: 70px; /* Match header height */
 }
 
 .menu-btn {
   background: none;
   border: none;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
-  margin-top: 20px;
-  position: fixed;
-  
-
-
-
-}
-/* Header */
-.header {
- background-color: #1C352D;
-  padding: 30px 30px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-text{
-  flex:1;
-  text-align: center;
-
-}
-.header-text h1{
-margin: 0;
-text-align: center;
+  padding: 20px;
 }
 
-.header-text h1 p {
-  margin: 5px 0;
+.sidebar-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
-
-
-/* Sidebar */
-.sidebar {
-
-  position: fixed;
-  top: 0;
-  right: -250px; 
-  width: 250px;
-  height: 100%;
-  z-index: 2000; /* make sure it’s above other panels */
-  transition: right 0.3s ease;
-  box-sizing: border-box;
-  background-color: #004d4081;
-}
-
-.sidebar ul { 
+.sidebar ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar ul li {
-  margin-top: 20px;
-  padding: 15px 20px;
+  padding: 10px 0;
 }
 
 .sidebar ul li a {
   color: white;
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-.sidebar ul li:hover {
-  background-color: #333;
+.sidebar ul li a:hover {
+  background-color: #3a5a51;
 }
 
-/* Sidebar open state */
-.sidebar.active {
-  right:0; /* shift in from right of menu button panel */
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-right: 20px;
+}
+
+.link-text {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+/* This is now the COLLAPSED state (and the default) */
+#layout-container.sidebar-collapsed .sidebar {
+  width: 80px; /* Collapsed width */
+}
+
+#layout-container.sidebar-collapsed .sidebar-logo,
+#layout-container.sidebar-collapsed .link-text {
+  opacity: 0;
+  pointer-events: none; /* Make text unclickable when hidden */
+}
+
+#layout-container.sidebar-collapsed .sidebar ul li a {
+  padding: 15px 28px; /* Center icons */
 }
 
 /* Admin link hidden by default */
@@ -97,76 +106,84 @@ text-align: center;
   display: none;
 }
 
+/* --- Main Content Area --- */
 
-
-/* Buttons */
-.button-container {
-  text-align: center;
-  margin: 30px;
- 
-  
+/* This is now the EXPANDED state for main content */
+#main-content {
+  flex-grow: 1;
+  margin-left: 200px; /* Match expanded sidebar width */
+  transition: margin-left 0.3s ease;
+  width: calc(100% - 200px);
 }
 
-.button-container a {
+/* This is now the COLLAPSED state for main content (and the default) */
+#layout-container.sidebar-collapsed #main-content {
+  margin-left: 80px; /* Match collapsed sidebar width */
+  width: calc(100% - 80px);
+}
+
+/* Header */
+.header {
+  background-color: #1C352D;
+  
+  padding: 10px 30px;
+  color: white;
+  text-align: center;
+  height: 110px; /* Give header a fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons */
+
+.btn-report,.btn-login {
+  background-color: #5f1c1c;;
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
+  position:absolute;
+  z-index: 1001;
   color: white;
-
 }
-.button-container a:hover {
+
+.btn-report:hover {
   background-color: #1b5d39;
 }
+.btn-report{
+  bottom:30px;
+  right:40px;
+}
+.btn-login{
+    background-color: #fbfbfb;
+    padding: 10px 10px;
+    size:40px;
+    top: 20px;
+   right: 45px;
+}
+.btn-login:hover{
+   background-color: #000000;
 
-
-.btn-report {
-  background-color: #004D40;
-  margin-right: 10px;
 }
 
-.btn-login {
-  background-color: #00796B;
-}
-
-/* Status Cards */
-.status-cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin: 0 20px;
-}
-
-.card {
-  flex: 1;
-  min-width: 150px;
-  background: white;
-  padding: 20px;
-  border-radius: 45px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-  margin: 0;
-  color: #00796B;
-}
-
-.card p {
-  margin: 5px;
-}
 
 /* Map Section */
 .map-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
+  padding: 0 30px; /* Add some padding */
+}
+
+.Map_legend {
+  background-color: #00000048;
+  position: absolute;
+  padding: 30px 30px;
+  bottom: 30px;
+  left:20px;
+  z-index: 1002;
 }
 
 #map {
-  height: 1000px;
-  width: 1300px;
+  height: 600px; /* Use viewport height for responsiveness */
+  width: 100%; /* Make map responsive */
   border-radius: 20px;
   border: 1px solid #000000;
 }
@@ -177,11 +194,5 @@ text-align: center;
   color: white;
   text-align: center;
   padding: 10px;
-  margin-top: 10px;
-
+  margin-top: 30px;
 }
-
-.footer p {
-  margin: 5px;
-}
-
